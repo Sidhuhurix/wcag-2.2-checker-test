@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redundant Entry - Failure</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        form {
+            border: 2px solid #ff0000;
+            padding: 20px;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+        button {
+            background-color: #ff0000;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Redundant Entry - Failure</h1>
+    
+    <form action="#" method="post">
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email">
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        
+        <button type="submit">Submit</button>
+    </form>
+
+    <h1>Redundant Entry - Success</h1>
+    
+    <form action="#" method="post">
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" value="user@example.com" readonly>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

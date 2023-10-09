@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Not Obscured Example</title>
+    <style>
+        /* Basic styles */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        
+        /* Style for the focused element */
+        .focused {
+            background-color: #ffcc00;
+            border: 2px solid #ff9900;
+            padding: 8px;
+        }
+        
+        /* Style for the obscuring content */
+        .obscuring-content {
+            background-color: #f0f0f0;
+            border: 1px solid #999999;
+            padding: 10px;
+            margin-top: 10px;
+            display: none;
+        }
+
+        /* Button style */
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Button hover effect */
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a class="anchor-link" href="test data2.html">click here</a>
+        <a class="anchor-link" href="test datsa.html">Authentication</a>
+    </div>
+    <h1>Focus Not Obscured Example</h1>
+    <label for="inputField">Enter your name:</label>
+    <input type="text" id="inputField" class="focused">
+    
+   
+    <button id="showObscuringContent">Show Obscuring Content</button>
+    <div class="obscuring-content">
+        This is obscuring content that should not hide the focused input field.
+    </div>
+
+    <script>
+        const inputField = document.getElementById("inputField");
+        const obscuringContent = document.querySelector(".obscuring-content");
+        const showObscuringContentButton = document.getElementById("showObscuringContent");
+
+        showObscuringContentButton.addEventListener("click", () => {
+            obscuringContent.style.display = "block";
+        });
+
+        inputField.addEventListener("focus", () => {
+            inputField.classList.add("focused");
+            obscuringContent.style.display = "none";
+        });
+
+        inputField.addEventListener("blur", () => {
+            inputField.classList.remove("focused");
+        });
+    </script>
+</body>
+</html>
