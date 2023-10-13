@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Redundant Entry</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .form-container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #f4f4f4;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="tel"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Redundant Entry- success</h1>
+    <h2>Address Form</h2>
+    
+    <div class="form-container">
+        <form action="#" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="residentialAddress">Residential Address:</label>
+            <textarea id="residentialAddress" name="residentialAddress" required rows="4"></textarea>
+
+            <label for="copyAddress">Residential address is same as Permanent address</label>
+            <input type="checkbox" id="copyAddress">
+
+            <label for="permanentAddress">Permanent Address:</label>
+            <textarea id="permanentAddress" name="permanentAddress" required rows="4"></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <h1>Redundant Entry- Failure</h1>
+
+    <div class="form-container">
+        <form action="#" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="residentialAddress">Residential Address:</label>
+            <textarea id="residentialAddress" name="residentialAddress" required rows="4"></textarea>
+
+            
+
+            <label for="permanentAddress">Permanent Address:</label>
+            <textarea id="permanentAddress" name="permanentAddress" required rows="4"></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+
+    <script>
+        const copyAddressCheckbox = document.getElementById('copyAddress');
+        const residentialAddressField = document.getElementById('residentialAddress');
+        const permanentAddressField = document.getElementById('permanentAddress');
+
+        // Add an event listener to the checkbox to copy the residential address to permanent address
+        copyAddressCheckbox.addEventListener('change', function () {
+            if (this.checked) {
+                permanentAddressField.value = residentialAddressField.value;
+            } else {
+                permanentAddressField.value = ''; // Clear the permanent address field
+            }
+        });
+    </script>
+</body>
+</html>
