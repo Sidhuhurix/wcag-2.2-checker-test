@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form with CAPTCHA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .login-container {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0 0 20px;
+            font-size: 24px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        .captcha-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .captcha-label {
+            flex: 1;
+        }
+        .captcha-image {
+            flex: 2;
+        }
+        .captcha-image img {
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            width: 100px;
+            height: 40px;
+        }
+        .captcha-input {
+            flex: 1;
+        }
+        .submit-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form action="#" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <div class="captcha-container">
+                <label class="captcha-label" for="captcha">Please enter the CAPTCHA:</label>
+                <div class="captcha-image">
+                    <img src="https://www.tsohost.com/assets/uploads/blog/capcha.jpeg" alt="CAPTCHA Image">
+                </div>
+                <input type="text" id="captcha" name="captcha" class="captcha-input" required>
+            </div>
+
+            <button type="submit" class="submit-button">Login</button>
+        </form>
+    </div>
+</body>
+</html>
